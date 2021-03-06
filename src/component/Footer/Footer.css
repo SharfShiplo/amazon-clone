@@ -1,0 +1,75 @@
+.footer {
+  padding-top: 32px;
+  width: 100%;
+  background-color: #232f3e;
+}
+.footer__container {
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+.footer__options > h6 {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.footer__options > ul > li {
+  margin: 3px 0;
+}
+.footer__options > ul > li > a {
+  font-size: 14px;
+  color: #ddd;
+  font-weight: 500;
+  padding: 4px 0;
+}
+
+.footer__options > ul > li > a:hover {
+  text-decoration: underline;
+}
+
+.footer__copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  box-sizing: border-box;
+}
+.footer__copyright_left > a {
+  display: block;
+  width: 76px;
+  height: 24px;
+  box-sizing: border-box;
+  margin-right: 10px;
+}
+.footer__logo {
+  width: 76px;
+  height: 24px;
+  object-fit: contain;
+}
+.footer__copyrightRight {
+  display: flex;
+  align-items: center;
+}
+.footer__copyrightRight > a {
+  margin-right: 6px;
+}
+.footer__copyrightOption {
+  padding: 6px 18px 6px 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ccc;
+  border: 1px solid #848688;
+  border-radius: 3px;
+}
+.footer__container > .MuiDivider-root {
+  background-color: #3a4553;
+}
+
+@media (max-width: 380.98px) {
+  .footer__copyright {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,18 @@
+.sidedrawer {
+  width: 250px;
+}
+
+.sidedrawer__top {
+  cursor: pointer;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  background-color: #232f3e;
+}
+.sidedrawer__topRight {
+  margin-left: 8px;
+}
+
+.sidedrawer__topRight > p {
+  color: #fff;
+}

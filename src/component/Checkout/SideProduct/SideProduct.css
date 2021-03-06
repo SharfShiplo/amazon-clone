@@ -1,0 +1,42 @@
+.sideProduct {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  margin: 10px 0;
+}
+
+.sideProduct .sideProduct__image {
+  width: 100px;
+}
+
+.sideProduct .sideProduct__image > img {
+  width: 100px;
+  object-fit: contain;
+}
+.sideProduct__info {
+  margin-left: 12px;
+}
+.sideProduct__info > h6 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.sideProduct__info > .sideProduct__rating {
+  display: flex;
+  align-items: center;
+}
+.sideProduct__rating > div {
+  margin: 0 1px;
+}
+.sideProudct__price {
+  margin-bottom: 6px;
+}
+.sideProduct__info > button {
+  background: #f0c14b;
+  border: 1px solid;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
+  padding: 8px 24px;
+  border-radius: 3px;
+  cursor: pointer;
+}

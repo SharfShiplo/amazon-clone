@@ -1,0 +1,50 @@
+.orders .orders__container {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40px 0;
+}
+.orders__title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid lightgray;
+}
+.orders__displayBox {
+  padding: 15px 0 29px;
+  border-bottom: 1px solid lightgray;
+}
+.orders__displayBox__option {
+  width: 100%;
+  box-sizing: border-box;
+}
+.orders__displayBox__optionItem {
+  display: flex;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.displayBox__optionImage {
+  width: 80px;
+  object-fit: contain;
+}
+.displayBox__optionInfo {
+  margin-left: 8px;
+}
+.displayBox__optionInfo > p > span {
+  padding-right: 6px;
+}
+.displayBox_shipping_info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.displayBox_shipping_info > ul {
+  padding: 20px 12px;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+}
+.displayBox_shipping_info > ul > li > span {
+  padding: 6px;
+}
+@media (max-width: 959.98px) {
+  .displayBox__optionInfo > h6 {
+    font-size: 1rem;
+  }
+}

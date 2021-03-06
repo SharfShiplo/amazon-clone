@@ -10,7 +10,8 @@
 
 # production
 /build
-
+#Local config/setup
+F:\React Practice\Challange25\amazon-clone\src\firebase.js
 # misc
 .DS_Store
 .env.local
