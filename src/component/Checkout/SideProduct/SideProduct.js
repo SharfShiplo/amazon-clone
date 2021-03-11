@@ -5,16 +5,15 @@ import { useDispatch } from "react-redux";
 import { addItem } from "../../../features/basket/basket";
 import { Snackbar } from "@material-ui/core";
 import CustomAlert from "../../UI/CustomAlert/CustomAlert";
-function SideProduct({ id, title, price, rating, image }) {
+function SideProduct({ id, title, price, rating, image, unit }) {
   const dispatch = useDispatch();
   const [snacker, setSnacker] = useState(false);
   const addTocart = () => {
-    let newCount = 1;
     dispatch(
       addItem({
         id: id,
         title: title,
-        count: newCount,
+        count: unit,
         price: price,
         rating: rating,
         image: image,

@@ -5,7 +5,10 @@ import { Link, useHistory } from "react-router-dom";
 import CurrencyFormat from "react-currency-format";
 import { Typography, Grid } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
-import { selectAddress } from "../../../features/deliveryaddress/deliveryAddressSlice";
+import {
+  selectAddress,
+  resetAddress,
+} from "../../../features/deliveryaddress/deliveryAddressSlice";
 import {
   selectBasket,
   getBasketTotal,
@@ -14,6 +17,7 @@ import {
 } from "../../../features/basket/basket";
 import { db } from "../../../firebase";
 import { selectUser } from "../../../features/user/userSlice";
+import firebase from "firebase/app";
 function Payment() {
   const [succeeded, setSucceeded] = useState(false);
   const [processing, setProcessing] = useState(false);
@@ -35,6 +39,7 @@ function Payment() {
         shippingto: address,
         totalprice: grandTotal,
         userid: user.userId,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       })
       .then(() => {
         setProcessing(false);
@@ -42,6 +47,7 @@ function Payment() {
         setError(null);
         history.replace("/orders");
         dispatch(resetBasket());
+        dispatch(resetAddress());
       })
       .catch((error) => alert(error.message));
   };

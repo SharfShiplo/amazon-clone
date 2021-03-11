@@ -35,7 +35,7 @@ const BottomHeader = () => {
             </div>
           </Hidden>
 
-          <Hidden smDown>
+          <Hidden mdDown>
             <div className="bottomHeader__option">
               <span className="bottomHeader_option__text">Gift Cards</span>
             </div>
@@ -45,14 +45,14 @@ const BottomHeader = () => {
               <span className="bottomHeader_option__text">Sell</span>
             </div>
           </Hidden>
-          <Hidden smDown>
+          <Hidden mdDown>
             <div className="bottomHeader__option">
               <span className="bottomHeader_option__text">Registry</span>
             </div>
           </Hidden>
         </div>
         <div className="bottomHeader__right">
-          <Hidden smDown>
+          <Hidden xsDown>
             <div className="bottomHeader__option">
               <span className="bottomHeader_option__text">
                 Amazon's response to COVID-19

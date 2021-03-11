@@ -9,7 +9,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { auth } from "../../../firebase";
 import { selectUser, removeUser } from "../../../features/user/userSlice";
 
-export default function SwipeableTemporaryDrawer({ open, openIt, closeIt }) {
+
+ const SwipeableTemporaryDrawer = ({ open, openIt, closeIt })=> {
   const history = useHistory();
   const dispatch = useDispatch();
   const signedInuser = useSelector(selectUser);
@@ -17,6 +18,7 @@ export default function SwipeableTemporaryDrawer({ open, openIt, closeIt }) {
     if (signedInuser) {
       dispatch(removeUser());
       auth.signOut();
+      history.push("/");
     } else {
       history.push("/login");
     }
@@ -44,9 +46,11 @@ export default function SwipeableTemporaryDrawer({ open, openIt, closeIt }) {
               </Typography>
             </div>
           </div>
-          <NavList />
+          <NavList isAuth={signedInuser} />
         </div>
       </Drawer>
     </div>
   );
 }
+
+export default SwipeableTemporaryDrawer;

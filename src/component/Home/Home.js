@@ -20,7 +20,6 @@ function Home() {
       fetchProducts();
     };
   }, []);
-  console.log(homeProducts);
   return (
     <div className="home">
       <Container maxWidth="xl">
@@ -36,6 +35,7 @@ function Home() {
                 price={homeProduct.data.price}
                 rating={homeProduct.data.rating}
                 image={homeProduct.data.image}
+                unit={homeProduct.data.unit}
               />
             </Grid>
           ))}

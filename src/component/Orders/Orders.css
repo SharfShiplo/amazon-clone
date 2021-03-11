@@ -43,8 +43,48 @@
 .displayBox_shipping_info > ul > li > span {
   padding: 6px;
 }
+.orders__blank {
+  width: 60%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  margin: 20px auto 0;
+  box-sizing: border-box;
+  border: 1px solid lightgray;
+}
+.orders__blankIconBox {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.orders__blank > p {
+  margin: 12px 0;
+}
+.orders__blank > button {
+  background: #f0c14b;
+  padding: 10px 30px;
+  border-radius: 3px;
+  border: 1px solid;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
+  cursor: pointer;
+  text-transform: capitalize;
+}
 @media (max-width: 959.98px) {
   .displayBox__optionInfo > h6 {
     font-size: 1rem;
+  }
+  .orders__blank {
+    width: 85%;
+  }
+  .orders__title {
+    padding-left: 10px;
   }
 }

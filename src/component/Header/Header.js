@@ -19,6 +19,14 @@ function Header() {
     if (signedInuser) {
       dispatch(removeUser);
       auth.signOut();
+      history.push("/");
+    } else {
+      history.push("/login");
+    }
+  };
+  const myOrders = () => {
+    if (signedInuser) {
+      history.push("/orders");
     } else {
       history.push("/login");
     }
@@ -34,7 +42,12 @@ function Header() {
           />
         </Link>
         <div className="header__search">
-          <input className="header__searchInput" type="text" />
+          <input
+            className="header__searchInput"
+            type="text"
+            placeholder="Just a 
+            Dummy input"
+          />
           <SearchIcon className="header__searchIcon" />
         </div>
         <div className="header__nav">
@@ -49,7 +62,7 @@ function Header() {
             </div>
           </Hidden>
           <Hidden smDown>
-            <div className="header__option">
+            <div className="header__option" onClick={myOrders}>
               <span className="header__optionLineOne">Returns</span>
               <span className="header__optionLineTwo">&amp; Orders</span>
             </div>

@@ -5,24 +5,28 @@ import Snackbar from "@material-ui/core/Snackbar";
 import { useDispatch } from "react-redux";
 import { addItem } from "../../../features/basket/basket";
 import CustomAlert from "../../UI/CustomAlert/CustomAlert";
-function Product({ id, title, image, price, rating }) {
+import { useHistory } from "react-router-dom";
+function Product({ id, title, image, price, unit, rating }) {
   const [snacker, setSnacker] = useState(false);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const AddToBasket = () => {
-    let newCount = 1;
     dispatch(
       addItem({
         id: id,
         title: title,
-        count: newCount,
+        count: unit,
         price: price,
         rating: rating,
         image: image,
-        totalPrice: price,
+        totalPrice: price * unit,
       })
     );
     setSnacker(true);
+  };
+  const viewProduct = () => {
+    history.push(`/products/${id}`);
   };
   const closeSnackbar = () => {
     setSnacker(false);
@@ -40,7 +44,7 @@ function Product({ id, title, image, price, rating }) {
   return (
     <>
       <div className="product">
-        <div className="product__info">
+        <div className="product__info" onClick={viewProduct}>
           <p className="product__title">{title}</p>
           <p className="proudct__price">
             <small>$</small>
@@ -56,7 +60,7 @@ function Product({ id, title, image, price, rating }) {
               ))}
           </div>
         </div>
-        <img src={image} alt="product" />
+        <img src={image} alt="product" onClick={viewProduct} />
         <div className="product__buttonWrapper">
           <button onClick={AddToBasket}>Add to Cart</button>
         </div>

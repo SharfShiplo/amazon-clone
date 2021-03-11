@@ -74,6 +74,7 @@ function Checkout() {
                 price={product.data.price}
                 image={product.data.image}
                 rating={product.data.rating}
+                unit={product.data.unit}
               />
             ))}
           </div>

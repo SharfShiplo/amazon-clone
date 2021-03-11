@@ -9,10 +9,13 @@ export const addressSlice = createSlice({
     addAddress: (state, action) => {
       state.address = action.payload;
     },
+    resetAddress: (state) => {
+      state.address = null;
+    },
   },
 });
 
-export const { addAddress } = addressSlice.actions;
+export const { addAddress, resetAddress } = addressSlice.actions;
 
 export const selectAddress = (state) => state.address.address;
 

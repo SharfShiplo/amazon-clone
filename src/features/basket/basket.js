@@ -12,7 +12,8 @@ export const basketSlice = createSlice({
       );
       let updatedBasket = [...state.basket];
       if (itemIndex >= 0) {
-        let currentCount = updatedBasket[itemIndex].count + 1;
+        let currentCount =
+          updatedBasket[itemIndex].count + action.payload.count;
         let updatedPrice = updatedBasket[itemIndex].price * currentCount;
         let updatedItem = {
           ...updatedBasket[itemIndex],

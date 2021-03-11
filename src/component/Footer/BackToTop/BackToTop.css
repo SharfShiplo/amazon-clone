@@ -1,0 +1,21 @@
+.backToTop {
+  width: 100%;
+  cursor: pointer;
+  background-color: #37475a;
+  transition: all ease 0.3s;
+}
+.backToTop:hover {
+  background-color: #485769;
+}
+.backToTop__container {
+  width: 100%;
+  max-width: 1400px;
+  padding: 8px 16px;
+  text-align: center;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.backToTop__container > span {
+  color: #fefefe;
+}

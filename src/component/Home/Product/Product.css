@@ -1,11 +1,13 @@
 .product {
   padding: 10px;
   min-width: 100px;
+  min-height: 389px;
   box-sizing: border-box;
   background-color: white;
   z-index: 1;
 }
 .product__info {
+  cursor: pointer;
   margin-bottom: 10px;
 }
 .product__title {
@@ -14,6 +16,10 @@
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  transition: all ease 0.3s;
+}
+.product__title:hover {
+  color: #c7511f;
 }
 .proudct__price {
   margin: 5px 0;
@@ -26,6 +32,7 @@
   margin: 0 1px;
 }
 .product > img {
+  cursor: pointer;
   width: 100%;
   max-height: 200px;
   object-fit: contain;

@@ -9,6 +9,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import AccountBoxIcon from "@material-ui/icons/AccountBox";
 import AssignmentReturnOutlinedIcon from "@material-ui/icons/AssignmentReturnOutlined";
 import RepeatIcon from "@material-ui/icons/Repeat";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,13 +23,21 @@ function ListItemLink(props) {
   return <ListItem button component="a" {...props} />;
 }
 
-export default function NavList() {
+export default function NavList({ isAuth }) {
   const classes = useStyles();
+  const history = useHistory();
 
+  const myOrders = () => {
+    if (!isAuth) {
+      history.push("/login");
+    } else {
+      history.push("/orders");
+    }
+  };
   return (
     <div className={classes.root}>
       <List component="nav" aria-label="User Acount">
-        <ListItem button>
+        <ListItem button onClick={() => history.push("/")}>
           <ListItemIcon>
             <HomeIcon />
           </ListItemIcon>
@@ -40,7 +49,7 @@ export default function NavList() {
           </ListItemIcon>
           <ListItemText primary="Account" />
         </ListItem>
-        <ListItem button>
+        <ListItem button onClick={myOrders}>
           <ListItemIcon>
             <AssignmentReturnOutlinedIcon />
           </ListItemIcon>
